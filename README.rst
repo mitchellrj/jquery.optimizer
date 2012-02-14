@@ -42,3 +42,11 @@ Optimizations
  * Optimized chaining of function calls. (TBD)
  
  * Optimized caching of selector results. (TBD)
+
+License
+-------
+Released under the `Apache License, Version 2.0`__
+
+.. _License: https://www.apache.org/licenses/LICENSE-2.0.html
+
+__ License_
