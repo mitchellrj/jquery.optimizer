@@ -18,22 +18,36 @@ textarea {
 
 </style>
 
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="https://raw.github.com/mitchellrj/jquery.optimizer/master/jquery.optimizer.js" type="text/javascript"></script>
 <script type="text/javascript">
 function doOptimize() {
 	var source = document.getElementById('input').value;
 	document.getElementById('output').value = jQuery.optimize(source);
 }
-$(function () {
-  $(document.getElementById('readme')).load('https://github.com/mitchellrj/jquery.optimizer/blob/master/README.rst #readme');
-});
 </script>
 </head>
 <body>
 
-<div id="readme" />
+<h1>jquery.optimizer</h1>
+<p>Attempts to optimize your jQuery code on the fly.</p>
+ 
+<h2>Usage</h2>
+<p>Include your jQuery scripts in your page in the usual way, but
+instead of using type="text/javascript, use
+type="text/javascript+jquery:</p>
+<pre>&lt;script src="foo.js" type="text/javascript+jquery"&gt;&lt;/script&gt;
 
+&lt;script type="text/javascript+jquery"&gt;
+  $.foo();
+&lt;/script&gt;
+</pre>
+<p>then, include the jquery.optimization.js script in your page as an
+ordinary Javascript resource, being careful to load it after all your
+jQuery scripts.:</p>
+<pre>&lt;script src="jquery.optimizer.js" type="text/javascript"&gt;&lt;/script&gt;
+</pre>
+
+<h2>Example</h2> 
 <form action="#">
 
 <textarea id="input">
@@ -54,6 +68,24 @@ $('.class p #foo bar[attr="a b c"]')
 </textarea>
 
 </form>
+ 
+<h2>Optimizations</h2>
+<blockquote>
+<ul>
+<li>Optimized use of selectors. Sources:<ul>
+<li><a href="http://24ways.org/2011/your-jquery-now-with-less-suck">http://24ways.org/2011/your-jquery-now-with-less-suck</a></li>
+<li><a href="http://jsperf.com/various-jquery-testcases">http://jsperf.com/various-jquery-testcases</a></li>
+<li><a href="http://jsperf.com/jquery-document-tag-names-vs-child-tag-names">http://jsperf.com/jquery-document-tag-names-vs-child-tag-names</a></li>
+<li><a href="http://jsperf.com/find-vs-direct-selector">http://jsperf.com/find-vs-direct-selector</a></li>
+<li><a href="http://jsperf.com/jquery-nested-class-selectors">http://jsperf.com/jquery-nested-class-selectors</a></li>
+<li><a href="http://jsperf.com/id-vs-class-vs-tag-selectors/12">http://jsperf.com/id-vs-class-vs-tag-selectors/12</a></li>
+</ul>
+</li>
+<li>Optimized chaining of function calls. (TBD)</li>
+<li>Optimized caching of selector results. (TBD)</li>
+</ul>
+</blockquote>
+ 
 
 </body>
 </html>
