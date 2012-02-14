@@ -85,7 +85,7 @@
 					match[1] + "(" + quot + selectors[0] + quot +
 					").find(" +quot +
 						selectors.slice(1).join(quot + ").find(" + quot)
-					+ quot + ");";
+					+ quot + ")";
 				source = source.replace(
 						selectorCall,
 						replacementSelectorCall
