@@ -1,35 +1,44 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-gb">
 <head>
-<title>jquery.optimizer example</title>
-<style type="text/css">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-body {
-  vertical-align: middle;
-}
+<title>jquery.optimizer example</title>
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+<style type="text/css">
 
 textarea {
   height: 20em;
-  width: 40%;
-}
-
-#process {
-  width: 10%;
 }
 
 </style>
-
-<script src="https://raw.github.com/mitchellrj/jquery.optimizer/master/jquery.optimizer.js" type="text/javascript"></script>
-<script type="text/javascript">
-function doOptimize() {
-	var source = document.getElementById('input').value;
-	document.getElementById('output').value = jQuery.optimize(source);
-}
-</script>
 </head>
 <body>
 
+<div class="container">
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
 <h1>jquery.optimizer</h1>
 <p>Attempts to optimize your jQuery code on the fly.</p>
+</div>
  
 <h2>Usage</h2>
 <p>Include your jQuery scripts in your page in the usual way, but
@@ -48,9 +57,10 @@ jQuery scripts.:</p>
 </pre>
 
 <h2>Example</h2> 
+<div class="row>
 <form action="#">
 
-<textarea id="input">
+<textarea id="input" class="span5">
 $('#foo');
 
 $('bla');
@@ -62,9 +72,9 @@ $('#foo p');
 $('.class p #foo bar[attr="a b c"]')
 </textarea>
 
-<input type="button" id="optimize" value="Optimize" onclick="javascript:doOptimize();void(0);"/>
+<input class="btn btn-primary span2" type="button" id="optimize" value="Optimize" onclick="javascript:doOptimize();void(0);"/>
 
-<textarea id="output">
+<textarea id="output" class="span5">
 </textarea>
 
 </form>
@@ -85,7 +95,22 @@ $('.class p #foo bar[attr="a b c"]')
 <li>Optimized caching of selector results. (TBD)</li>
 </ul>
 </blockquote>
- 
+      <footer>
+        <p>&copy; Richard Mitchell 2012</p>
+      </footer>
+
+</div> 
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+<script src="https://raw.github.com/mitchellrj/jquery.optimizer/master/jquery.optimizer.js" type="text/javascript"></script>
+<script type="text/javascript">
+function doOptimize() {
+	var source = document.getElementById('input').value;
+	document.getElementById('output').value = jQuery.optimize(source);
+}
+</script>
 
 </body>
 </html>
