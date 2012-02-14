@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>jquery.optimizer example</title>
+<style type="text/css">
+
+body {
+  vertical-align: middle;
+}
+
+textarea {
+  height: 20em;
+  width: 40%;
+}
+
+#process {
+  width: 10%;
+}
+
+</style>
+
+<script src="jquery.optimizer.js" type="text/javascript"></script>
+<script type="text/javascript">
+function doOptimize() {
+	var source = document.getElementById('input').value;
+	document.getElementById('output').value = jQuery.optimize(source);
+}
+</script>
+</head>
+<body>
+
+<form action="#">
+
+<textarea id="input">
+$('#foo');
+
+$('bla');
+
+$('p #foo bar');
+
+$('#foo p');
+
+$('.class p #foo bar[attr="a b c"]')
+</textarea>
+
+<input type="button" id="optimize" value="Optimize" onclick="javascript:doOptimize();void(0);"/>
+
+<textarea id="output">
+</textarea>
+
+</form>
+
+</body>
+</html>
