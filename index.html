@@ -18,15 +18,21 @@ textarea {
 
 </style>
 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="https://raw.github.com/mitchellrj/jquery.optimizer/master/jquery.optimizer.js" type="text/javascript"></script>
 <script type="text/javascript">
 function doOptimize() {
 	var source = document.getElementById('input').value;
 	document.getElementById('output').value = jQuery.optimize(source);
 }
+$(function () {
+  $(document.getElementById('readme')).load('https://github.com/mitchellrj/jquery.optimizer/blob/master/README.rst #readme');
+});
 </script>
 </head>
 <body>
+
+<div id="readme" />
 
 <form action="#">
 
